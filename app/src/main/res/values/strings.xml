@@ -1,0 +1,4 @@
+<resources>
+  <string name="app_name">CZNbot</string>
+  <string name="accessibility_service_description">Automates Chaos Zero Nightmare actions.</string>
+</resources>
