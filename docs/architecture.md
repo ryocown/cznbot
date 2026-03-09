@@ -14,6 +14,7 @@ This iteration addresses the specific mechanics of CZN (AP, EP, Stress, Tenacity
 ### 2. The Actuator (`AccessibilityService` & Local Computer Vision)
 *   **Object Detection (`YOLO` Model):** 
     Before Gemini can execute an action, a lightweight `YOLO` (You Only Look Once) model runs locally on the Android device (via ONNX Runtime or TFLite). It scans the fresh screenshot and identifies all interactive objects: Friendlies, Foes, and Cards in Hand.
+    See [YOLO Training Pipeline](./yolo_training.md) for details on how we train this model.
 *   **Coordinate Injection:** 
     The YOLO model returns a bounding box (X, Y coordinates) for each detected entity. These coordinates are appended to the entity's logical name before being passed to Gemini (e.g., `enemy1_loc: [450, 800]`, `slot3_loc: [120, 950]`).
 *   **Coordinate Mapping:** 
